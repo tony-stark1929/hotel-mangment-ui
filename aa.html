@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>/* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+        }
+        
+        /* Header Styling */
+        .navbar {
+            background-color: #343a40;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.75rem;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #f39c12;
+            text-decoration: underline;
+        }
+        
+        .navbar-toggler {
+            border-color: #ffffff;
+        }
+        
+        /* Hero Section Styling */
+        /* Hero Section Styling */
+.hero-section {
+    background-image: url('bag.png'); /* Your background image */
+    background-size: cover;  /* Make sure the image covers the entire section */
+    background-position: center;  /* Center the image */
+    background-repeat: no-repeat;  /* Prevent the image from repeating */
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.hero-section .btn {
+    font-size: 1.25rem;
+    padding: 12px 35px;
+    background-color: #f39c12;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-section .btn:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+        
+        /* Rooms Section */
+        #rooms {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+        
+        #rooms h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        /* Room Cards Styling */
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .card img:hover {
+            transform: scale(1.1);
+        }
+        
+        .card-body {
+            padding: 20px;
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .card-text {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .card p strong {
+            font-size: 1.2rem;
+            color: #27ae60;
+        }
+        
+        /* Booking Form Section */
+        #booking {
+            padding: 80px 0;
+            background-color: #f1f1f1;
+        }
+        
+        .booking-form {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+        
+        .booking-form .form-row .col-md-4 {
+            margin-bottom: 20px;
+        }
+        
+        .booking-form input,
+        .booking-form select,
+        .booking-form textarea {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 100%;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        
+        .booking-form input:focus,
+        .booking-form select:focus,
+        .booking-form textarea:focus {
+            border-color: #f39c12;
+            outline: none;
+        }
+        
+        .booking-form button {
+            font-size: 1.25rem;
+            padding: 15px 30px;
+            background-color: #f39c12;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .booking-form button:hover {
+            background-color: #e67e22;
+            transform: scale(1.05);
+        }
+        
+        /* Contact Section */
+        #contact {
+            padding: 80px 0;
+        }
+        
+        #contact h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        
+        #contact p {
+            font-size: 1.1rem;
+            text-align: center;
+            color: #666;
+        }
+        
+        #contact .row {
+            margin-top: 40px;
+        }
+        
+        #contact iframe {
+            border-radius: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            .hero-section p {
+                font-size: 1.2rem;
+            }
+            .card-title {
+                font-size: 1.2rem;
+            }
+            .card-text {
+                font-size: 0.9rem;
+            }
+            .booking-form {
+                padding: 30px;
+            }
+            .booking-form input,
+            .booking-form select,
+            .booking-form textarea {
+                padding: 12px;
+            }
+            .booking-form button {
+                padding: 12px 25px;
+            }
+        }
+        </style>
+    <!-- Bootstrap for some quick styling (optional) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Hotel Stay</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
+                <li class="nav-item"><a class="nav-link" href="#booking">Book Now</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section (Landing Page) -->
+    <section id="hero" class="hero-section text-center text-white">
+        <div class="container" style="color: #000000;">
+            <h1>Welcome to Hotel Stay</h1>
+            <p>Experience luxury and comfort at affordable prices.</p>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="container py-5">
+        <h2 class="text-center">Our Rooms</h2>
+        <div class="row">
+            <!-- Room 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="single.png" class="card-img-top" alt="Single Room">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room</h5>
+                        <p class="card-text">A comfortable single room perfect for solo travelers.</p>
+                        <p><strong>1500/-night</strong></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Room 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="double.png" class="card-img-top" alt="Double Room">
+                    <div class="card-body">
+                        <h5 class="card-title">Double Room</h5>
+                        <p class="card-text">Spacious room with double beds, ideal for couples or friends.</p>
+                        <p><strong>2000/-night</strong></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Room 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="split.png" class="card-img-top" alt="Suite Room">
+                    <div class="card-body">
+                        <h5 class="card-title">Suite Room</h5>
+                        <p class="card-text">A luxurious suite with top-notch amenities.</p>
+                        <p><strong>3500/-night</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center">Book Your Stay</h2>
+            <form action="#" method="POST" class="booking-form">
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="checkin">Check-in Date</label>
+                        <input type="date" class="form-control" id="checkin" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="checkout">Check-out Date</label>
+                        <input type="date" class="form-control" id="checkout" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="room">Select Room</label>
+                        <select class="form-control" id="room" required>
+                            <option value="single">Single Room</option>
+                            <option value="double">Double Room</option>
+                            <option value="suite">Suite Room</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="guests">Number of Guests</label>
+                        <input type="number" class="form-control" id="guests" placeholder="Number of guests" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg btn-block">Confirm Booking</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container py-5">
+        <h2 class="text-center">Contact Us</h2>
+        <p class="text-center">For more details or inquiries, feel free to reach out.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Email:</strong> contact@hotelstay.com</p>
+                <p><strong>Phone:</strong> +1 (800) 123-4567</p>
+            </div>
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=...your_map_embed_code_here..." width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; Ayush's hotel ui</p>
+    </footer>
+
+   
+</body>
+</html>
